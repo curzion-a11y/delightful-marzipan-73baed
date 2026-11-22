@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#7F4450">
+<title>LUMÉA — Depilador Facial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{color-scheme:only light}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;color:#2B1F1B;background:#F2DACF}
+a{color:#8A4A55}a:hover{color:#6B3641}
+h1,h2,h3{margin:0}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+details[open] .faq-plus{transform:rotate(45deg)}
+.cta-btn:hover{background:linear-gradient(135deg,#EEC260 0%,#D19A2C 55%,#E6B54F 100%)!important}
+.sticky-bar{display:none}
+.hero-rating{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;width:fit-content;max-width:100%;padding:9px 16px;border:1px solid #DDB8AA;border-radius:999px;background:#FBF0EA;box-shadow:0 3px 10px rgba(138,74,85,.06);font-size:13px;line-height:1.5}
+.hero-rating-stars{color:#C48C20;letter-spacing:1px;white-space:nowrap}
+.hero-rating-score{font-weight:700;white-space:nowrap}
+.hero-rating-copy{color:#5A4640}
+.hero-rating-link{font-weight:700;text-decoration:none;white-space:nowrap}
+.hero-rating-link:hover{text-decoration:underline;text-underline-offset:3px}
+.hero-rating-link:focus-visible{outline:2px solid #8A4A55;outline-offset:4px;border-radius:3px}
+#quem-usa-mostra{scroll-margin-top:24px}
+@keyframes lumea-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-track{animation:lumea-marquee 32s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+@media(max-width:700px){
+  .sticky-bar{display:flex!important}
+  .hide-m{display:none!important}
+  .hero-h1{font-size:34px!important}
+  .hero-rating{border-radius:22px;padding:9px 14px}
+  .hero-sec{gap:20px!important}
+  .hero-left{display:contents!important}
+  .hero-top{order:1;flex:1 1 100%!important}
+  .hero-bottom{order:2;flex:1 1 100%!important}
+  .hero-video{order:3;flex:1 1 100%!important}
+  .hero-video video{max-width:280px!important;border-radius:22px!important}
+  .cta-btn{display:block!important;width:100%;text-align:center!important;padding-left:16px!important;padding-right:16px!important}
+  .sticky-bar .cta-btn{display:inline-block!important;width:auto;padding-left:24px!important;padding-right:24px!important}
+  .sticky-bar{padding-bottom:calc(12px + env(safe-area-inset-bottom))!important}
+  h2{font-size:28px!important;line-height:1.2!important}
+  .sec-p{padding:48px 20px 24px!important}
+  .sec-p2{padding:36px 20px!important}
+  .sec-p3{padding:44px 20px!important}
+  .sec-p4{padding:48px 20px!important}
+  .sec-p5{padding:0 20px 44px!important}
+  .sec-p6{padding:0 20px 52px!important}
+  .sec-p7{padding:8px 20px 36px!important}
+  .cmp-grid{min-width:0!important;font-size:12.5px!important}
+  .cmp-grid>div{padding:10px 6px!important}
+}
+
+/* ===== cards: passos e benefícios ===== */
+.gold-text{color:#8A5A00;background:linear-gradient(100deg,#6B4300 0%,#8F600A 24%,#AE7C1C 44%,#B8862A 50%,#AE7C1C 56%,#8F600A 78%,#7A5006 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gold-text-bright{color:#E6B54F;background:linear-gradient(100deg,#C48C20 0%,#E6B54F 30%,#F6DD9B 50%,#E6B54F 70%,#C48C20 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.gold-medal{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#F0C75E 0%,#C48C20 55%,#E0AE45 100%);box-shadow:0 8px 20px rgba(138,90,0,.35),inset 0 1px 0 rgba(255,255,255,.55);flex:none}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.step-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:34px 28px 32px;border-radius:28px;background:linear-gradient(160deg,#FFF8F3 0%,#F7E4DB 100%);border:1px solid #DDB8AA;box-shadow:0 10px 30px rgba(138,74,85,.10);transition:transform .3s,box-shadow .3s,border-color .3s}
+.step-card:hover{transform:translateY(-6px);border-color:#C48C20;box-shadow:0 18px 40px rgba(138,90,0,.22)}
+.step-card:not(:last-child)::after{content:"";position:absolute;top:66px;right:-28px;width:28px;border-top:2px dashed #C48C20}
+.step-num{position:absolute;top:10px;right:22px;font-family:'Playfair Display',serif;font-size:96px;line-height:1;font-weight:700;color:#C48C20;opacity:.16;pointer-events:none}
+.step-card h3{font-family:'Playfair Display',serif;font-size:23px;line-height:1.2;font-weight:700;color:#2B1F1B;margin-top:4px}
+.step-card p{margin:0;font-size:15.5px;line-height:1.65;color:#5A4640}
+.ben-sec{background:linear-gradient(135deg,#2B1F1B 0%,#3B2A25 50%,#2B1F1B 100%);border-top:1px solid #4A372F;border-bottom:1px solid #4A372F}
+.ben-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.ben-card{grid-column:span 2;display:flex;flex-direction:column;gap:14px;padding:30px 28px;border-radius:26px;background:linear-gradient(160deg,rgba(251,240,234,.10) 0%,rgba(251,240,234,.03) 100%);border:1px solid rgba(230,181,79,.32);transition:transform .3s,border-color .3s,box-shadow .3s}
+.ben-card:nth-child(4){grid-column:2 / span 2}
+.ben-card:nth-child(5){grid-column:4 / span 2}
+.ben-card:hover{transform:translateY(-5px);border-color:#E6B54F;box-shadow:0 16px 38px rgba(0,0,0,.40),0 0 0 1px rgba(230,181,79,.25)}
+.ben-card h3{font-family:'Playfair Display',serif;font-size:21px;line-height:1.25;font-weight:700;color:#fff}
+.ben-card p{margin:0;font-size:15px;line-height:1.65;color:#DDB8AA}
+@media(max-width:980px){
+  .ben-grid{grid-template-columns:repeat(2,1fr)}
+  .ben-card,.ben-card:nth-child(4),.ben-card:nth-child(5){grid-column:auto}
+  .ben-card:nth-child(5){grid-column:1 / -1}
+}
+@media(max-width:860px){
+  .steps-grid{grid-template-columns:1fr;gap:40px}
+  .step-card:not(:last-child)::after{top:auto;right:auto;bottom:-40px;left:50%;width:0;height:40px;border-top:0;border-left:2px dashed #C48C20}
+}
+@media(max-width:700px){
+  .ben-grid{grid-template-columns:1fr;gap:16px}
+  .ben-card:nth-child(5){grid-column:auto}
+  .ben-card{padding:26px 22px}
+  .step-card{padding:30px 24px 28px}
+  .ben-sec h2{font-size:28px!important}
+}
+@media(prefers-reduced-motion:reduce){.step-card,.ben-card{transition:none}.step-card:hover,.ben-card:hover{transform:none}}
+
+/* ===== comparativo: coluna LUMÉA dourada + divisórias verticais ===== */
+.cmp-grid>.c1{grid-column:1}.cmp-grid>.c2{grid-column:2}.cmp-grid>.c3{grid-column:3}.cmp-grid>.c4{grid-column:4}
+.cmp-grid>.r1{grid-row:1}.cmp-grid>.r2{grid-row:2}.cmp-grid>.r3{grid-row:3}.cmp-grid>.r4{grid-row:4}.cmp-grid>.r5{grid-row:5}
+.cmp-gold{grid-column:2;grid-row:1 / span 5;background:linear-gradient(180deg,#F1CF78 0%,#E8BA55 100%);box-shadow:inset 0 0 0 1px rgba(196,140,32,.6)}
+.cmp-grid>.c2,.cmp-grid>.c3,.cmp-grid>.c4{border-left:1px solid #DDB8AA}
+.cmp-grid>.c2{border-left-color:#C99A33;border-right:1px solid #C99A33;border-top-color:rgba(138,90,0,.35)!important;font-weight:700!important}
+.cmp-grid>.c2.r1{background:linear-gradient(135deg,#E6B54F 0%,#C48C20 55%,#DAA63C 100%);border-color:#C48C20}
+
+/* ===== faixa de confiança ===== */
+.trust-sec{background:linear-gradient(135deg,#EBC9BC 0%,#F7E4DB 50%,#EBC9BC 100%);border-top:1px solid #DDB8AA;border-bottom:1px solid #DDB8AA;padding:44px 24px}
+.trust-wrap{max-width:1180px;margin:0 auto}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);background:linear-gradient(160deg,#FFF8F3 0%,#FBF0EA 100%);border:1px solid #DDB8AA;border-radius:28px;box-shadow:0 14px 36px rgba(138,74,85,.14);overflow:hidden}
+.trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:30px 22px 28px;border-left:1px solid #DDB8AA}
+.trust-item:first-child{border-left:0}
+.trust-medal{width:56px;height:56px}
+.trust-t{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;line-height:1.25;color:#2B1F1B}
+.trust-d{font-size:14.5px;line-height:1.55;color:#5A4640;margin-top:6px}
+@media(max-width:860px){
+  .trust-sec{padding:32px 16px}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-item{padding:26px 14px 24px}
+  .trust-item:nth-child(odd){border-left:0}
+  .trust-item:nth-child(n+3){border-top:1px solid #DDB8AA}
+  .trust-item:nth-child(3){grid-column:1 / -1;border-left:0}
+  .trust-t{font-size:17px}
+  .trust-d{font-size:13.5px}
+}
+
+/* ===== quem usa, mostra ===== */
+.reviews-sec{background:linear-gradient(135deg,#EBC9BC 0%,#F7E4DB 50%,#EBC9BC 100%);border-top:1px solid #DDB8AA;padding:72px 24px 64px}
+.reviews-wrap{max-width:1132px;margin:0 auto}
+.reviews-heading{text-align:center;max-width:640px;margin:0 auto 36px}
+.reviews-eyebrow{display:block;margin-bottom:12px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A4A55}
+.reviews-heading h2{font-family:'Playfair Display',serif;font-size:40px;line-height:1.2;font-weight:700}
+.reviews-heading p{margin:16px 0 0;font-size:17px;line-height:1.65;color:#5A4640}
+.reviews-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 60px)/4);gap:20px;list-style:none;margin:0;padding:4px 0 20px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#B3787F transparent}
+.review-card{min-width:0;scroll-snap-align:start;display:flex;flex-direction:column;padding:16px 16px 22px;border:1px solid #DDB8AA;border-radius:26px;background:linear-gradient(160deg,#FFF8F3 0%,#FBF0EA 100%);box-shadow:0 6px 14px rgba(138,74,85,.08)}
+.review-photo{display:block;width:100%;height:auto;aspect-ratio:7/6;object-fit:cover;border-radius:15px;background:#EBD3CB}
+.review-name{margin:18px 0 9px;font-size:14px;line-height:1.5;font-weight:700;color:#2B1F1B}
+.review-stars{color:#A16A0D;font-size:20px;line-height:1;letter-spacing:3px}
+.review-card blockquote{margin:16px 0 0;font-size:14px;line-height:1.7;color:#5A4640;overflow-wrap:anywhere}
+.review-card blockquote p{margin:0}
+.reviews-footer{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:20px}
+.reviews-status{margin:0;min-width:155px;text-align:center;font-size:13px;line-height:1.5;color:#5A4640;font-variant-numeric:tabular-nums}
+.reviews-arrow{display:inline-flex;justify-content:center;align-items:center;flex:none;width:44px;height:44px;padding:0;border:1px solid #B3787F;border-radius:50%;background:#FBF0EA;color:#8A4A55;cursor:pointer;transition:background .2s,color .2s}
+.reviews-arrow[hidden]{display:none}
+.reviews-arrow:hover{background:#8A4A55;color:#FFF8F3}
+.reviews-arrow[aria-disabled="true"]{opacity:.4;cursor:default;background:#FBF0EA;color:#8A4A55}
+.reviews-track:focus-visible,.reviews-arrow:focus-visible{outline:3px solid #8A4A55;outline-offset:4px}
+@media(max-width:980px){.reviews-track{grid-auto-columns:calc((100% - 40px)/3)}}
+@media(max-width:700px){
+  .reviews-sec{padding:48px 20px 40px}
+  .reviews-heading{margin-bottom:26px}
+  .reviews-heading p{font-size:16px}
+  .reviews-track{grid-auto-columns:82%;gap:16px}
+  .review-card{padding:16px 16px 22px;border-radius:24px}
+  .review-card blockquote{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.reviews-arrow{transition:none}}
+
+/* ===== animação de entrada ao rolar ===== */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .55s cubic-bezier(.22,.8,.3,1),transform .55s cubic-bezier(.22,.8,.3,1);will-change:opacity,transform}
+.js .rv.in{opacity:1;transform:none}
+</style>
+<script>(function(){try{if('IntersectionObserver' in window&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("js")}}catch(e){}})();</script>
+</head>
+<body>
+<div style="width:100%;background:#F2DACF;font-family:'Inter',system-ui,sans-serif;color:#2B1F1B">
+
+<!-- BARRA DE TOPO -->
+<div style="background:linear-gradient(135deg,#A35F69,#7F4450);color:#fff;padding:11px 0;overflow:hidden;white-space:nowrap;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">
+<div class="marquee-track" style="display:flex;width:max-content">
+<span style="padding:0 36px">Frete grátis para todo o Brasil &nbsp;•</span>
+<span style="padding:0 36px">Troca ou devolução em até 7 dias &nbsp;•</span>
+<span style="padding:0 36px">Pix ou cartão em até 12x &nbsp;•</span>
+<span style="padding:0 36px">Frete grátis para todo o Brasil &nbsp;•</span>
+<span style="padding:0 36px">Troca ou devolução em até 7 dias &nbsp;•</span>
+<span style="padding:0 36px">Pix ou cartão em até 12x &nbsp;•</span>
+<span aria-hidden="true" style="padding:0 36px">Frete grátis para todo o Brasil &nbsp;•</span>
+<span aria-hidden="true" style="padding:0 36px">Troca ou devolução em até 7 dias &nbsp;•</span>
+<span aria-hidden="true" style="padding:0 36px">Pix ou cartão em até 12x &nbsp;•</span>
+<span aria-hidden="true" style="padding:0 36px">Frete grátis para todo o Brasil &nbsp;•</span>
+<span aria-hidden="true" style="padding:0 36px">Troca ou devolução em até 7 dias &nbsp;•</span>
+<span aria-hidden="true" style="padding:0 36px">Pix ou cartão em até 12x &nbsp;•</span>
+</div>
+</div>
+
+<!-- CONTADOR DA OFERTA ESPECIAL -->
+<div id="oferta-timer" role="timer" aria-label="Tempo restante da oferta especial" style="background:#2B1F1B;color:#fff;text-align:center;padding:10px 12px 12px">
+<div style="font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E6B54F">&#9889; Oferta especial de Black Friday: expira em</div>
+<div style="display:flex;justify-content:center;align-items:flex-start;gap:8px;margin-top:8px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><span id="t-h" style="display:flex;align-items:center;justify-content:center;width:54px;height:46px;border-radius:10px;background:#FBF0EA;color:#2B1F1B;font-family:'Playfair Display',serif;font-size:26px;line-height:1;font-weight:700;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:'lnum' 1,'tnum' 1;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.28)">00</span><span style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#DDB8AA">Horas</span></div>
+<span aria-hidden="true" style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#E6B54F;padding-bottom:16px">:</span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><span id="t-m" style="display:flex;align-items:center;justify-content:center;width:54px;height:46px;border-radius:10px;background:#FBF0EA;color:#2B1F1B;font-family:'Playfair Display',serif;font-size:26px;line-height:1;font-weight:700;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:'lnum' 1,'tnum' 1;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.28)">00</span><span style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#DDB8AA">Min</span></div>
+<span aria-hidden="true" style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#E6B54F;padding-bottom:16px">:</span>
+<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><span id="t-s" style="display:flex;align-items:center;justify-content:center;width:54px;height:46px;border-radius:10px;background:#FBF0EA;color:#2B1F1B;font-family:'Playfair Display',serif;font-size:26px;line-height:1;font-weight:700;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:'lnum' 1,'tnum' 1;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.28)">00</span><span style="font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#DDB8AA">Seg</span></div>
+</div>
+</div>
+
+<!-- HEADER -->
+<div style="max-width:1180px;margin:0 auto;padding:22px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+<span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#8A4A55;letter-spacing:.06em">LUMÉA</span>
+<a href="#oferta" class="hide-m" style="font-size:14px;font-weight:600;color:#2B1F1B;text-decoration:none;border-bottom:2px solid #8A4A55;padding-bottom:2px">Ver oferta</a>
+</div>
+
+<!-- HERO -->
+<section class="hero-sec" style="max-width:1180px;margin:0 auto;padding:24px 24px 64px;display:flex;flex-wrap:wrap;gap:48px;align-items:center">
+<div class="hero-left" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:22px">
+<div class="hero-top" style="display:flex;flex-direction:column;gap:22px">
+<h1 class="hero-h1" style="font-family:'Playfair Display',serif;font-size:52px;line-height:1.1;font-weight:700;color:#8A5A00;background:linear-gradient(100deg,#6B4300 0%,#8F600A 24%,#AE7C1C 44%,#B8862A 50%,#AE7C1C 56%,#8F600A 78%,#7A5006 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 rgba(255,246,230,.55))">Pelinhos do rosto fora em segundos, sem pinça e sem cera.</h1>
+<div class="hero-rating" role="group" aria-label="Avaliações de clientes">
+<span class="hero-rating-stars" aria-hidden="true">★★★★★</span>
+<span class="hero-rating-score" aria-label="Nota 4,9 de 5">4.9 / 5</span>
+<span class="hero-rating-copy">Avaliações reais: <a class="hero-rating-link" href="#quem-usa-mostra">Quem usa, mostra <span aria-hidden="true">→</span></a></span>
+</div>
+</div>
+<div class="hero-bottom" style="display:flex;flex-direction:column;gap:22px">
+<p style="margin:0;font-size:18px;line-height:1.6;color:#5A4640">A caneta LUMÉA apara buço, sobrancelha e contorno do rosto rente à pele, em um toque. Cabe na bolsa e deixa a maquiagem com acabamento de salão.</p>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:16px;color:#2B1F1B">
+<li style="display:flex;gap:10px;align-items:flex-start"><span aria-hidden="true" style="color:#8A4A55;font-weight:700">✓</span><span>Sem puxar, sem arrancar: corta o pelo na superfície</span></li>
+<li style="display:flex;gap:10px;align-items:flex-start"><span aria-hidden="true" style="color:#8A4A55;font-weight:700">✓</span><span>Compacta e recarregável por USB</span></li>
+<li style="display:flex;gap:10px;align-items:flex-start"><span aria-hidden="true" style="color:#8A4A55;font-weight:700">✓</span><span>Entrega em 3 a 6 dias úteis, com frete grátis</span></li>
+</ul>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:6px">
+<a href="https://pay.kaiross.com.br/kJEzB3vYi7ti" rel="noopener" class="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#E6B54F 0%,#C48C20 55%,#DAA63C 100%);color:#2B1F1B;box-shadow:0 6px 18px rgba(138,90,0,.32);text-decoration:none;font-weight:700;font-size:17px;letter-spacing:.04em;padding:18px 36px;border-radius:999px">QUERO A MINHA LUMÉA</a>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;color:#7A6259;text-decoration:line-through">De R$ 199,00</span><span style="font-family:'Playfair Display',serif;font-size:36px;line-height:1.1;font-weight:700;color:#2B1F1B">R$ 119,00</span><div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:2px"><span style="font-size:13px;color:#5A4640">ou 12x de <strong style="color:#2B1F1B">R$ 12,33</strong> no cartão</span><span style="font-size:13px;font-weight:600;color:#0B6B33;background:#C4F0D3;border:1px solid #4CC17C;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F7A3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"/></svg>Frete grátis para todo o Brasil</span></div></div>
+</div>
+<span style="font-size:13px;color:#5A4640">Compra segura. Se não gostar, você tem 7 dias para devolver.</span>
+</div>
+</div>
+<!-- Vídeo hero — SUBSTITUA o src pelo URL do seu vídeo hospedado -->
+<div class="hero-video" style="flex:1 1 380px;min-width:0">
+<video src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Modelo usando a caneta depiladora facial na sobrancelha e no buço" style="display:block;width:100%;max-width:440px;margin:0 auto;aspect-ratio:9/16;object-fit:cover;border-radius:28px;background:#EBD3CB"></video>
+</div>
+</section>
+
+<!-- FAIXA DE CONFIANÇA -->
+<section class="trust-sec">
+<div class="trust-wrap">
+<div class="trust-grid">
+<div class="trust-item"><span class="gold-medal trust-medal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><div class="trust-txt"><div class="trust-t">Compra protegida</div><div class="trust-d">Dados criptografados no pagamento</div></div></div>
+<div class="trust-item"><span class="gold-medal trust-medal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 9.38a1 1 0 0 0-.78-.38H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span><div class="trust-txt"><div class="trust-t">Frete grátis</div><div class="trust-d">Para todo o Brasil, 3 a 6 dias úteis</div></div></div>
+<div class="trust-item"><span class="gold-medal trust-medal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span><div class="trust-txt"><div class="trust-t">7 dias para devolver</div><div class="trust-d">Sem burocracia, sem dor de cabeça</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="sec-p" style="max-width:860px;margin:0 auto;padding:88px 24px 40px;text-align:center;display:flex;flex-direction:column;gap:20px">
+<h2 style="font-family:'Playfair Display',serif;font-size:40px;line-height:1.2;font-weight:700">Você se olha no espelho e o que aparece é o pelinho.</h2>
+<p style="margin:0;font-size:18px;line-height:1.7;color:#5A4640">A pele está pronta, a base está uniforme, mas aqueles pelinhos no buço, na lateral do rosto e entre as sobrancelhas aparecem na luz. Pinça demora e machuca. Lâmina de barbear é desajeitada. Salão custa caro e exige marcar horário. A LUMÉA resolve na hora, em casa, antes de sair.</p>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section style="max-width:1180px;margin:0 auto;padding:56px 24px" class="sec-p2">
+<h2 style="margin:0 0 40px;font-family:'Playfair Display',serif;font-size:36px;font-weight:700;text-align:center">Como funciona: <span class="gold-text">3 passos</span>, menos de 1 minuto</h2>
+<div class="steps-grid">
+<div class="step-card"><span class="step-num" aria-hidden="true">1</span><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg></span><h3>Ligue a caneta</h3><p>Aperte o botão para ligar. Ela é leve e fácil de segurar com uma mão.</p></div>
+<div class="step-card"><span class="step-num" aria-hidden="true">2</span><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span><h3>Deslize sobre a pele</h3><p>Passe suavemente no buço, sobrancelha ou lateral do rosto, com a pele esticada.</p></div>
+<div class="step-card"><span class="step-num" aria-hidden="true">3</span><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span><h3>Pronta para a make</h3><p>Pele lisinha rente, sem vermelhidão de pinça e sem sujeira de cera.</p></div>
+</div>
+<!-- Vídeo longo — SUBSTITUA o src pelo URL do seu vídeo hospedado -->
+<div style="margin-top:40px;display:flex;justify-content:center">
+<video src="teste-uso.mp4" poster="teste-uso-poster.jpg" controls playsinline preload="metadata" aria-label="Passo a passo de uso da caneta depiladora facial" style="display:block;width:100%;max-width:300px;aspect-ratio:9/16;object-fit:cover;border-radius:28px;background:#2B1F1B" onended="this.load()"></video>
+</div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="ben-sec">
+<div style="max-width:1180px;margin:0 auto;padding:80px 24px" class="sec-p3">
+<div style="text-align:center;margin-bottom:44px;display:flex;flex-direction:column;gap:10px;align-items:center">
+<span style="font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E6B54F">Por que a LUMÉA</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:38px;line-height:1.15;font-weight:700;color:#fff">O que muda na sua <span class="gold-text-bright">rotina</span></h2>
+</div>
+<div class="ben-grid">
+<div class="ben-card"><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><h3>Retoque em segundos</h3><p>Viu um pelinho no espelho? Resolva na hora, sem salão e sem hora marcada.</p></div>
+<div class="ben-card"><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><h3>Sem dor de pinça ou cera</h3><p>Corta na superfície, em vez de arrancar pela raiz.</p></div>
+<div class="ben-card"><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><h3>Cabe na bolsa</h3><p>Formato de caneta, discreto, ótimo para viagem e para o dia a dia.</p></div>
+<div class="ben-card"><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"/><path d="m11 7-3 5h4l-3 5"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span><h3>Recarregável por USB</h3><p>Sem trocar pilha. Até 45 minutos de uso por carga, com carregamento via cabo USB (bivolt).</p></div>
+<div class="ben-card"><span class="gold-medal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2B1F1B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span><h3>LED na ponta</h3><p>Ilumina a região enquanto você apara, para mais precisão nos cantinhos e no contorno.</p></div>
+</div>
+</div>
+</section>
+
+<!-- COMPARATIVO -->
+<section style="max-width:980px;margin:0 auto;padding:80px 24px" class="sec-p4">
+<h2 style="margin:0 0 32px;font-family:'Playfair Display',serif;font-size:36px;font-weight:700;text-align:center"><span style="font-size:1.18em;letter-spacing:.06em;font-weight:700;color:#8A5A00;background:linear-gradient(100deg,#6B4300 0%,#8F600A 24%,#AE7C1C 44%,#B8862A 50%,#AE7C1C 56%,#8F600A 78%,#7A5006 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 1px 0 rgba(255,246,230,.55))">LUMÉA</span> ou o jeito antigo?</h2>
+<div style="overflow-x:auto">
+<div class="cmp-grid" style="min-width:640px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;border:1px solid #DDB8AA;border-radius:20px;overflow:hidden;background:#FBF0EA;font-size:15px">
+<div class="cmp-gold" aria-hidden="true"></div>
+<div class="c1 r1" style="padding:16px;background:#F2DACF"></div>
+<div class="c2 r1" style="padding:16px;color:#2B1F1B;font-weight:700;letter-spacing:.06em;text-align:center">LUMÉA</div>
+<div class="c3 r1" style="padding:16px;background:#F2DACF;font-weight:600;text-align:center">Pinça</div>
+<div class="c4 r1" style="padding:16px;background:#F2DACF;font-weight:600;text-align:center">Cera / salão</div>
+<div class="c1 r2" style="padding:16px;border-top:1px solid #DDB8AA;font-weight:600">Tempo de uso</div>
+<div class="c2 r2" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center;font-weight:600;color:#2B1F1B">Segundos</div>
+<div class="c3 r2" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Vários minutos</div>
+<div class="c4 r2" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Agendar horário</div>
+<div class="c1 r3" style="padding:16px;border-top:1px solid #DDB8AA;font-weight:600">Desconforto</div>
+<div class="c2 r3" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center;font-weight:600;color:#2B1F1B">Corta na superfície</div>
+<div class="c3 r3" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Arranca o pelo</div>
+<div class="c4 r3" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Arranca o pelo</div>
+<div class="c1 r4" style="padding:16px;border-top:1px solid #DDB8AA;font-weight:600">Custo</div>
+<div class="c2 r4" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center;font-weight:600;color:#2B1F1B">Um pagamento só</div>
+<div class="c3 r4" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Baixo</div>
+<div class="c4 r4" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Recorrente</div>
+<div class="c1 r5" style="padding:16px;border-top:1px solid #DDB8AA;font-weight:600">Levar na bolsa</div>
+<div class="c2 r5" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center;font-weight:600;color:#2B1F1B">Sim</div>
+<div class="c3 r5" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Sim</div>
+<div class="c4 r5" style="padding:16px;border-top:1px solid #DDB8AA;text-align:center">Não</div>
+</div>
+</div>
+<p style="margin:16px 0 0;font-size:13px;color:#5A4640;text-align:center">Como o aparador corta na superfície, os pelos voltam a aparecer com o tempo. É um retoque rápido, não uma depilação definitiva.</p>
+</section>
+
+<!-- QUEM USA, MOSTRA -->
+<section id="quem-usa-mostra" class="reviews-sec" aria-labelledby="reviews-title">
+<div class="reviews-wrap">
+<div class="reviews-heading">
+<span class="reviews-eyebrow">Na rotina de quem usa</span>
+<h2 id="reviews-title">Quem usa, <span class="gold-text">mostra</span></h2>
+<p>Fotos e experiências de quem já recebeu a sua.</p>
+</div>
+<ul id="reviews-track" class="reviews-track" tabindex="0" aria-label="Avaliações de clientes. Deslize ou use as setas do teclado para explorar.">
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/valentina-barros.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Valentina Barros com o aparador e os acessórios na embalagem">
+<h3 class="review-name">Valentina Barros</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>Meu pedido chegou certinho, bem embalado, funcionando perfeitamente, tirei a sobrancelha da minha mãe com ele e deu super certo.</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/joana-silva.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Joana Silva do aparador e da escovinha na embalagem">
+<h3 class="review-name">Joana Silva</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>Maravilhoso<br>Designer lindo e muito útil!</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/isabelly-batista.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Isabelly Batista segurando o aparador rosa">
+<h3 class="review-name">Isabelly Batista</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>Adorei vou testar mas a principio amei a minha compra</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/isadora-costa.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Isadora Costa segurando o aparador branco com ponta dourada">
+<h3 class="review-name">Isadora Costa</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>O produto veio ok, o resultado é ótimo. Ele cumpre seu papel. Depila bem, rápido e sem machucar. Não dói. Tira bem os pelos</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/joana-reis.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Joana Reis do aparador ao lado da caixa sobre a mesa">
+<h3 class="review-name">Joana Reis</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>excelente<br>Chegou hoje em perfeito estado e, muito bem embalado.</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/melissa-martins.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Melissa Martins do pacote recebido, com os dados de entrega desfocados">
+<h3 class="review-name">Melissa Martins</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>Excelente para depilar buço e sobrancelha, achei super prática…</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/maria-julia-barros.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Maria Júlia Barros do aparador com o cabo USB e a escovinha">
+<h3 class="review-name">Maria Júlia Barros</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>Ainda não testei, mas está funcionando perfeitamente. O envio e a entrega foram bem…</p></blockquote>
+</li>
+<li class="review-card">
+<img class="review-photo" src="assets/avaliacoes/silvia-nogueira.webp" width="210" height="180" loading="lazy" decoding="async" alt="Foto de Silvia Nogueira da embalagem do aparador recebido">
+<h3 class="review-name">Silvia Nogueira</h3>
+<span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+<blockquote><p>Estou satisfeita com a caneta entrega rápida recomendo ainda não testei</p></blockquote>
+</li>
+</ul>
+<div class="reviews-footer">
+<button class="reviews-arrow" type="button" data-review-direction="-1" aria-label="Mostrar avaliações anteriores" aria-controls="reviews-track" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+<p class="reviews-status" aria-live="polite" aria-atomic="true">8 avaliações de clientes</p>
+<button class="reviews-arrow" type="button" data-review-direction="1" aria-label="Mostrar próximas avaliações" aria-controls="reviews-track" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+</div>
+</div>
+</section>
+
+<!-- OFERTA -->
+<section id="oferta" style="background:#2B1F1B;color:#fff">
+<div style="max-width:980px;margin:0 auto;padding:80px 24px;display:flex;flex-direction:column;gap:32px;align-items:center;text-align:center">
+<span style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#EBD3CB">Oferta especial de Black Friday</span>
+<h2 style="font-family:'Playfair Display',serif;font-size:40px;line-height:1.2;font-weight:700">Garanta a sua <span style="font-size:1.18em;letter-spacing:.06em;font-weight:700;color:#E6B54F;background:linear-gradient(100deg,#C48C20 0%,#E6B54F 30%,#F6DD9B 50%,#E6B54F 70%,#C48C20 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">LUMÉA</span></h2>
+<div style="width:100%;max-width:380px;background:#FBF0EA;color:#2B1F1B;border:3px solid #D4A5A0;border-radius:24px;padding:28px 24px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+<span style="font-size:15px;color:#7A6259;text-decoration:line-through">De R$ 199,00</span>
+<span style="font-family:'Playfair Display',serif;font-size:46px;line-height:1.05;font-weight:700">R$ 119,00</span>
+<span style="font-size:14.5px;color:#5A4640">ou <strong style="color:#2B1F1B">12x de R$ 12,33</strong> no cartão</span>
+<span style="font-size:13px;font-weight:600;color:#0B6B33;background:#C4F0D3;border:1px solid #4CC17C;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F7A3A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"/></svg>Frete grátis para todo o Brasil</span>
+</div>
+<a href="https://pay.kaiross.com.br/kJEzB3vYi7ti" rel="noopener" class="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#E6B54F 0%,#C48C20 55%,#DAA63C 100%);color:#2B1F1B;box-shadow:0 6px 18px rgba(138,90,0,.32);text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.04em;padding:20px 48px;border-radius:999px;border:2px solid #F3D9A0">QUERO A MINHA LUMÉA POR R$ 119,00</a>
+<div style="display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;font-size:14px;color:#EBD3CB">
+<span>Pix ou cartão em até 12x</span><span>Entrega em 3 a 6 dias úteis</span><span>7 dias de garantia</span>
+</div>
+</div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sec-p5" style="max-width:860px;margin:0 auto;padding:60px 24px 80px">
+<div style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:28px;padding:40px;display:flex;flex-direction:column;gap:12px;text-align:center">
+<h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700">Garantia de 7 dias</h2>
+<p style="margin:0;font-size:17px;line-height:1.7;color:#5A4640">Receba, teste e, se não gostar, devolva em até 7 dias após o recebimento. Você faz a solicitação pelo nosso atendimento e nós cuidamos do restante, conforme a nossa política de devoluções.</p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="sec-p6" style="max-width:800px;margin:0 auto;padding:0 24px 88px">
+<h2 style="margin:0 0 32px;font-family:'Playfair Display',serif;font-size:36px;font-weight:700;text-align:center">Dúvidas frequentes</h2>
+<div style="display:flex;flex-direction:column;gap:12px">
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>A LUMÉA arranca o pelo pela raiz?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">Não. Ela corta os pelos na superfície da pele, sem arrancar. Por isso os pelos voltam a aparecer com o tempo e o uso é um retoque rápido.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Dói?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">Não. A dor da pinça e da cera vem de arrancar o fio pela raiz, e a LUMÉA não faz isso: ela apenas corta o pelo rente à pele, na superfície, sem puxão e sem arrancar nada. É só deslizar a ponta sobre a região, sem pressionar. Para um resultado confortável, passe com a pele limpa e seca e evite repassar várias vezes no mesmo ponto.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Quanto tempo dura a bateria?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">A LUMÉA é recarregável por cabo USB e rende até 45 minutos de uso por carga, o suficiente para muitos retoques. O carregamento completo leva cerca de 8 horas, então o ideal é deixar carregando à noite.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>A LUMÉA tem luz?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">Sim. Ela tem um LED na ponta que ilumina a região enquanto você apara, ajudando a enxergar os pelinhos mais finos.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Qual a cor do produto?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">As cores são sortidas e enviadas conforme a disponibilidade do estoque. Não é possível escolher a cor no pedido.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Em quais regiões do rosto posso usar?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">Buço, sobrancelhas, lateral do rosto e contorno. Evite usar sobre feridas, irritações ou pele machucada.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Em quanto tempo chega?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">A entrega leva de 3 a 6 dias úteis após a confirmação da compra, com frete grátis para todo o Brasil.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Como funciona a troca ou devolução?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">Você tem até 7 dias após o recebimento para pedir a devolução. Fale com o nosso atendimento e orientamos o passo a passo.</p>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Quais são as formas de pagamento?</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<p style="margin:0 0 20px;line-height:1.7;color:#5A4640">Pix ou cartão de crédito em até 12x. O pagamento é feito em ambiente seguro.</p>
+</details>
+
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background:linear-gradient(135deg,#EDC3B5,#CE9187)">
+<div style="max-width:860px;margin:0 auto;padding:72px 24px;text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center">
+<h2 style="font-family:'Playfair Display',serif;font-size:38px;line-height:1.2;font-weight:700;color:#2B1F1B">Chega de pelinho aparecendo na foto.</h2>
+<p style="margin:0;font-size:17px;color:#2B1F1B;line-height:1.6">Receba em casa com frete grátis e teste por 7 dias, sem risco.</p>
+<a href="https://pay.kaiross.com.br/kJEzB3vYi7ti" rel="noopener" class="cta-btn" style="display:inline-block;background:linear-gradient(135deg,#E6B54F 0%,#C48C20 55%,#DAA63C 100%);color:#2B1F1B;box-shadow:0 6px 18px rgba(138,90,0,.32);text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.04em;padding:20px 48px;border-radius:999px">QUERO A MINHA LUMÉA</a>
+</div>
+</section>
+
+<!-- POLÍTICAS -->
+<section id="politicas" style="background:linear-gradient(135deg,#EBC9BC 0%,#F7E4DB 50%,#EBC9BC 100%);border-top:1px solid #DDB8AA">
+<div style="max-width:800px;margin:0 auto;padding:64px 24px">
+<h2 style="margin:0 0 28px;font-family:'Playfair Display',serif;font-size:32px;font-weight:700;text-align:center">Políticas da loja</h2>
+<div style="display:flex;flex-direction:column;gap:12px">
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Trocas e devoluções</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<div style="padding-bottom:8px;font-size:15px">
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Última atualização: novembro de 2026.</strong></p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Direito de arrependimento (7 dias).</strong> Como a compra é feita pela internet, você pode desistir em até 7 dias corridos, contados a partir do recebimento do produto, sem precisar justificar (art. 49 do Código de Defesa do Consumidor). Nesse caso devolvemos o valor integral pago, incluindo o frete.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Como solicitar.</strong> Entre em contato pelo nosso WhatsApp de atendimento informando o número do pedido e o nome completo. Vamos passar as instruções de envio. A devolução é feita por nossa conta.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Condições do produto devolvido.</strong> Envie o produto com todos os itens que o acompanham e, de preferência, na embalagem original, sem sinais de mau uso.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Reembolso.</strong> Feito em até 10 dias úteis após recebermos e conferirmos o produto, pelo mesmo meio de pagamento. No cartão de crédito, o estorno pode aparecer na fatura em até duas faturas, conforme a operadora. No Pix, o valor retorna à conta de origem.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Produto com defeito.</strong> Se o produto chegar com defeito, avise em até 7 dias do recebimento para troca ou reembolso imediatos. A garantia legal contra defeitos de fabricação é de 90 dias a partir do recebimento (art. 26 do CDC). Fique tranquila: nós cuidamos do envio de retorno e da reposição.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Produto errado ou danificado no transporte.</strong> Envie fotos pelo atendimento e faremos a troca sem custo.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Não cobertos pela garantia.</strong> Danos causados por mau uso, quedas, contato com água ou tentativa de reparo por terceiros.</p>
+</div>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Política de frete e entrega</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<div style="padding-bottom:8px;font-size:15px">
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Última atualização: novembro de 2026.</strong></p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Frete grátis</strong> para todo o Brasil, sem valor mínimo de compra.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Prazo.</strong> A entrega leva de 3 a 6 dias úteis, contados a partir da confirmação do pagamento. O prazo pode variar conforme a região e a transportadora, e pode ser afetado por greves, clima, feriados e outros eventos fora do nosso controle.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Rastreamento.</strong> Assim que o pedido for postado, enviamos o código de rastreio por e-mail e/ou WhatsApp.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Endereço de entrega.</strong> Confira os dados antes de finalizar a compra. Endereço incorreto ou incompleto pode atrasar a entrega, e a transportadora costuma fazer até 3 tentativas. Se o pacote retornar por ausência ou endereço errado, entraremos em contato para reenvio.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Recebimento.</strong> Confira o pacote no ato da entrega. Se houver avaria na embalagem, recuse o recebimento ou anote na entrega e avise o nosso atendimento.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Atraso ou extravio.</strong> Se o prazo acabar e o pedido não chegar, fale com a gente. Abriremos a apuração junto à transportadora e, se não for possível entregar, reenviamos o produto ou devolvemos o valor pago.</p>
+</div>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Política de privacidade</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<div style="padding-bottom:8px;font-size:15px">
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Última atualização: novembro de 2026.</strong> Esta política explica como a LUMÉA trata os dados pessoais de quem visita o site e compra conosco, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Dados que coletamos.</strong> Nome, e-mail, telefone/WhatsApp, endereço de entrega e dados do pedido. Os dados de pagamento são processados diretamente pela plataforma de pagamento, em ambiente seguro, e não ficam armazenados por nós. Também podemos coletar dados de navegação (como páginas visitadas e tipo de dispositivo) por meio de cookies.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Para que usamos.</strong> Processar e entregar o pedido, emitir comunicações sobre a compra, prestar atendimento, prevenir fraudes, cumprir obrigações legais e, se você permitir, enviar novidades e ofertas.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Compartilhamento.</strong> Compartilhamos dados apenas com quem é necessário para concluir a compra: meios de pagamento, transportadoras e ferramentas de atendimento e análise. Não vendemos seus dados.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Seus direitos.</strong> Você pode solicitar confirmação de tratamento, acesso, correção, anonimização, portabilidade, eliminação dos dados e revogação de consentimento, nos termos do art. 18 da LGPD. Basta chamar o nosso atendimento pelo WhatsApp.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Contato.</strong> Dúvidas sobre privacidade: WhatsApp (21) 98102-7168, de segunda a sexta, das 10h às 18h.</p>
+</div>
+</details>
+
+<details style="background:#FBF0EA;border:1px solid #DDB8AA;border-radius:16px;padding:0 24px">
+<summary style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-weight:600;font-size:16px"><span>Termos de serviço</span><span class="faq-plus" aria-hidden="true" style="font-size:24px;color:#8A4A55;transition:transform .2s">+</span></summary>
+<div style="padding-bottom:8px;font-size:15px">
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>Última atualização: novembro de 2026.</strong> Ao navegar e comprar neste site, você concorda com os termos abaixo.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>1. Produto e informações.</strong> A LUMÉA é um aparador facial elétrico de uso pessoal. Descrições, fotos e vídeos têm caráter ilustrativo; o produto e a embalagem podem apresentar pequenas variações em relação às imagens. Os resultados podem variar de pessoa para pessoa.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>2. Preços e pagamento.</strong> Os preços são em reais (R$) e podem ser alterados sem aviso prévio, sem afetar pedidos já confirmados. Aceitamos Pix e cartão de crédito, em até 12x conforme as condições exibidas no pagamento.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>3. Pedido.</strong> O pedido é confirmado após a aprovação do pagamento e está sujeito à disponibilidade de estoque. Podemos cancelar pedidos com indício de fraude ou dados incorretos, com reembolso integral de qualquer valor pago.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>4. Uso correto.</strong> Siga as instruções que acompanham o produto. Não use sobre feridas, irritações ou pele machucada, e interrompa o uso em caso de desconforto.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>5. Propriedade intelectual.</strong> Textos, imagens, vídeos e a marca LUMÉA deste site não podem ser copiados ou reutilizados sem autorização.</p>
+<p style="margin:0 0 14px;line-height:1.7;color:#5A4640"><strong>6. Foro.</strong> Fica eleito o foro do domicílio do consumidor, conforme o Código de Defesa do Consumidor (Lei nº 8.078/1990).</p>
+</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<!-- RODAPÉ -->
+<footer style="background:#2B1F1B;color:#DDB8AA">
+<div style="max-width:1180px;margin:0 auto;padding:48px 24px 32px;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;font-size:14px;line-height:1.8">
+<div style="flex:1 1 240px"><div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fff">LUMÉA</div><div>Kaiross Intermediações LTDA</div><div>CNPJ 66.417.299/0001-92</div><div>Barueri – SP</div></div>
+<div style="flex:1 1 200px"><div style="font-weight:700;color:#fff">Atendimento</div><div><a href="https://wa.me/5521981027168" style="color:inherit;text-decoration:none">(21) 98102-7168</a></div><div>Seg a sex, das 10h às 18h</div></div>
+<div style="flex:1 1 200px"><div style="font-weight:700;color:#fff">Políticas</div><div><a href="#politicas" style="color:inherit;text-decoration:none">Política de privacidade</a></div><div><a href="#politicas" style="color:inherit;text-decoration:none">Termos de serviço</a></div><div><a href="#politicas" style="color:inherit;text-decoration:none">Trocas e devoluções</a></div><div><a href="#politicas" style="color:inherit;text-decoration:none">Política de frete e entrega</a></div></div>
+</div>
+<div style="text-align:center;padding:16px 24px 28px;font-size:13px;color:#C9B5AE">© 2026 LUMÉA. Todos os direitos reservados.</div>
+</footer>
+
+<!-- BARRA FIXA MOBILE -->
+<div class="sticky-bar" style="position:sticky;bottom:0;z-index:5;background:#FBF0EA;border-top:1px solid #DDB8AA;padding:12px 16px;gap:12px;align-items:center;justify-content:space-between">
+<div style="display:flex;flex-direction:column;line-height:1.15"><span style="font-size:12px;color:#7A6259;text-decoration:line-through">De R$ 199,00</span><span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700">R$ 119,00</span></div>
+<a href="https://pay.kaiross.com.br/kJEzB3vYi7ti" rel="noopener" class="cta-btn" style="background:linear-gradient(135deg,#E6B54F 0%,#C48C20 55%,#DAA63C 100%);color:#2B1F1B;box-shadow:0 6px 18px rgba(138,90,0,.32);text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px">COMPRAR</a>
+</div>
+
+</div>
+<script>
+(function(){
+  var KEY='lumea_oferta_fim', DURACAO=2*60*60*1000;
+  var box=document.getElementById('oferta-timer');
+  if(!box) return;
+  var fim=0, agora=Date.now();
+  try{ fim=parseInt(localStorage.getItem(KEY)||'0',10)||0; }catch(e){}
+  if(!fim){
+    fim=agora+DURACAO;
+    try{ localStorage.setItem(KEY,String(fim)); }catch(e){}
+  }
+  function dois(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var resta=fim-Date.now();
+    if(resta<=0){ box.style.display='none'; clearInterval(id); return; }
+    var seg=Math.floor(resta/1000);
+    document.getElementById('t-h').textContent=dois(Math.floor(seg/3600));
+    document.getElementById('t-m').textContent=dois(Math.floor((seg%3600)/60));
+    document.getElementById('t-s').textContent=dois(seg%60);
+  }
+  var id=setInterval(tick,1000);
+  tick();
+})();
+</script>
+<script>
+(function(){
+  if(!document.documentElement.classList.contains('js')) return;
+  var secs=document.querySelectorAll('.trust-sec,.sec-p,.sec-p2,.ben-sec,.sec-p4,.reviews-sec,#oferta,.sec-p5,.sec-p6,#politicas,section[style*="EDC3B5"]');
+  var alvos=[];
+  Array.prototype.forEach.call(secs,function(sec){
+    var w=sec;
+    if(!sec.style.maxWidth && sec.firstElementChild && sec.firstElementChild.tagName==='DIV') w=sec.firstElementChild;
+    Array.prototype.forEach.call(w.children,function(el){
+      var filhos=(el.matches&&el.matches('.trust-grid,.steps-grid,.ben-grid'))?el.children:[el];
+      Array.prototype.forEach.call(filhos,function(f,i){ alvos.push([f,filhos.length>1?i:0]); });
+    });
+  });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var el=e.target;
+      if(e.isIntersecting || e.boundingClientRect.top<0){
+        io.unobserve(el);
+        requestAnimationFrame(function(){ el.classList.add('in'); });
+        var fim=function(ev){ if(ev.propertyName!=='transform') return;
+          el.removeEventListener('transitionend',fim);
+          el.classList.remove('rv','in'); el.style.transitionDelay=''; };
+        el.addEventListener('transitionend',fim);
+        setTimeout(function(){ if(el.classList.contains('rv')){ el.classList.remove('rv','in'); el.style.transitionDelay=''; } },1800);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+  alvos.forEach(function(a){
+    var el=a[0]; el.classList.add('rv');
+    if(a[1]) el.style.transitionDelay=(Math.min(a[1],4)*90)+'ms';
+    io.observe(el);
+  });
+})();
+</script>
+<script>
+(function(){
+  var section=document.getElementById('quem-usa-mostra');
+  if(!section) return;
+  var track=section.querySelector('.reviews-track');
+  var cards=track.querySelectorAll('.review-card');
+  var buttons=section.querySelectorAll('.reviews-arrow');
+  var status=section.querySelector('.reviews-status');
+  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  function update(){
+    var frame=track.getBoundingClientRect();
+    var visible=[];
+    Array.prototype.forEach.call(cards,function(card,index){
+      var rect=card.getBoundingClientRect();
+      if(rect.left>=frame.left-2 && rect.right<=frame.right+2) visible.push(index+1);
+    });
+    if(visible.length){
+      var first=visible[0],last=visible[visible.length-1];
+      var label=(first===last?first:first+'–'+last)+' de '+cards.length+' avaliações';
+      if(status.textContent!==label) status.textContent=label;
+    }
+    buttons[0].setAttribute('aria-disabled',String(track.scrollLeft<=2));
+    buttons[1].setAttribute('aria-disabled',String(track.scrollLeft+track.clientWidth>=track.scrollWidth-2));
+  }
+  Array.prototype.forEach.call(buttons,function(button){
+    button.hidden=false;
+    button.addEventListener('click',function(){
+      if(button.getAttribute('aria-disabled')==='true') return;
+      var direction=Number(button.getAttribute('data-review-direction'));
+      var step=cards[1].getBoundingClientRect().left-cards[0].getBoundingClientRect().left;
+      var index=Math.round(track.scrollLeft/step)+direction;
+      track.scrollTo({left:Math.max(0,index)*step,behavior:reducedMotion.matches?'instant':'smooth'});
+    });
+  });
+  var pending=false;
+  track.addEventListener('scroll',function(){
+    if(pending) return;
+    pending=true;
+    requestAnimationFrame(function(){update();pending=false;});
+  },{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
+</body>
+</html>
